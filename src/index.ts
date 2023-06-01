@@ -1,9 +1,11 @@
 import chalk from "chalk";
 import pascalcase from "pascalcase";
+import { factoryIndex } from "./patterns/creational/factory";
 import { singletonIndex } from "./patterns/creational/singleton";
 
 const patterns: {[key: string]: () => void} = {
-    singleton: singletonIndex
+    singleton: singletonIndex,
+    factory: factoryIndex
 }
 
 const pattern: string = process.argv[2]
