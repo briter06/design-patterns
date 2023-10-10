@@ -3,16 +3,18 @@ import pascalcase from "pascalcase";
 import { factoryIndex } from "./patterns/creational/factory";
 import { singletonIndex } from "./patterns/creational/singleton";
 import { abstractFactoryIndex } from "./patterns/creational/abstractFactory";
+import { visitorIndex } from "./patterns/behavioral/visitor";
 
 const patterns: {[key: string]: () => void} = {
     singleton: singletonIndex,
     factory: factoryIndex,
-    abstractFactory: abstractFactoryIndex
+    abstractFactory: abstractFactoryIndex,
+    visitor: visitorIndex
 }
 
 const pattern: string = process.argv[2]
 if(patterns[pattern]){
-    console.log(chalk.yellow(`${pascalcase(pattern)} pattern:`))
+    console.log(chalk.yellow(`${pascalcase(pattern)} pattern:\n`))
     patterns[pattern]()
 }else{
     throw new Error('Invalid pattern')
